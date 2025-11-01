@@ -9,6 +9,9 @@ RUN apt-get install -y curl nano wget nginx git
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
+# OpenSSL 1.1
+RUN wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+RUN dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 
 # Mongo
 RUN ln -s /bin/echo /bin/systemctl
@@ -21,7 +24,7 @@ RUN apt-get install -y mongodb-org
 RUN apt-get install -y yarn
 
 # Install PIP
-RUN easy_install pip
+RUN pip install --upgrade "pip==24.0"
 
 
 ENV ENV_TYPE staging
