@@ -1,3 +1,7 @@
+# Submission Notes
+Please follow the env examples to start the project!
+
+
 # NOTE: DO NOT FORK THIS REPOSITORY. CLONE AND SETUP A STANDALONE REPOSITORY.
 
 # Adbrew Test!
